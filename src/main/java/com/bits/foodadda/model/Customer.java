@@ -17,7 +17,7 @@ public class Customer implements User{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private long id;
 	private String name;
 	private String password;
 	private String email;
@@ -25,7 +25,7 @@ public class Customer implements User{
 	public Customer() {
 		super();
 	}
-	public Customer(int id, String name, String password, String email, String address) {
+	public Customer(long id, String name, String password, String email, String address) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -33,10 +33,10 @@ public class Customer implements User{
 		this.email = email;
 		this.address = address;
 	}
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getName() {
