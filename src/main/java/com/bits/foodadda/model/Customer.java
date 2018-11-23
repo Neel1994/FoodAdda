@@ -10,89 +10,64 @@ import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
-@Table(name = "restaurant")
+@Table(name = "customer")
 @EntityListeners(AuditingEntityListener.class)
 
-public class Restaurant {
+public class Customer implements User{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String name;
+	private String password;
+	private String email;
 	private String address;
-	private int rating;
-	private int ratingPoints;
-	
-	public Restaurant() {
+	public Customer() {
 		super();
 	}
-	 
-	public Restaurant(int id, String name, String address, int rating, int ratingPoints) {
+	public Customer(int id, String name, String password, String email, String address) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.password = password;
+		this.email = email;
 		this.address = address;
-		this.rating = rating;
-		this.ratingPoints = ratingPoints;
 	}
-
-
-
-	public int getRatingPoints() {
-		return ratingPoints;
-	}
-
-
-
-	public void setRatingPoints(int ratingPoints) {
-		this.ratingPoints = ratingPoints;
-	}
-
-
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getAddress() {
 		return address;
 	}
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
-	public int getRating() {
-		return rating;
-	}
-
-	public void setRating(int rating) {
-		this.rating = rating;
-	}
-
-
-
 	@Override
 	public String toString() {
-		return "Restaurant [id=" + id + ", name=" + name + ", address=" + address + ", rating=" + rating
-				+ ", ratingPoints=" + ratingPoints + "]";
+		return "Customer [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email + ", address="
+				+ address + "]";
 	}
-
-	
-	
-
 	
 	
 }
