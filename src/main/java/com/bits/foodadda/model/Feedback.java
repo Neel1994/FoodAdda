@@ -30,6 +30,7 @@ public class Feedback {
 		this.restaurant = restaurant;
 		this.comment = comment;
 	}
+	
 
 	public Feedback(long id, Restaurant restaurant, String comment) {
 		super();
