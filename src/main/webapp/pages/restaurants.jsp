@@ -67,6 +67,7 @@
 									<th>Name</th>
 									<th>Address</th>
 									<th>Rating</th>
+									<th>Add Feedback</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -75,6 +76,7 @@
 										<td><a href="menu?id=${restaurants.id}">${restaurants.name}</a></td>
 										<td>${restaurants.address}</td>
 										<td>${restaurants.rating}</td>
+										<td><a href="feedback?id=${restaurants.id}">Add</td></a>
 									</tr>
 								</c:forEach>
 							</tbody>

@@ -24,6 +24,12 @@ public class Feedback {
 	public Feedback() {
 		super();
 	}
+	
+	public Feedback(Restaurant restaurant, String comment) {
+		super();
+		this.restaurant = restaurant;
+		this.comment = comment;
+	}
 
 	public Feedback(long id, Restaurant restaurant, String comment) {
 		super();
