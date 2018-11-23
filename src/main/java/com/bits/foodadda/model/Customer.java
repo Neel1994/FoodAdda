@@ -33,6 +33,13 @@ public class Customer implements User{
 		this.email = email;
 		this.address = address;
 	}
+	public Customer(String name, String password, String email, String address) {
+		super();
+		this.name = name;
+		this.password = password;
+		this.email = email;
+		this.address = address;
+	}
 	public long getId() {
 		return id;
 	}
