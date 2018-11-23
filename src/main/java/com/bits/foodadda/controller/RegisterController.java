@@ -26,4 +26,9 @@ public class RegisterController {
 			model.addAttribute("err", "User already exists");
 		return "restaurant";
 	}
+	
+	@RequestMapping(value="restaurant",method = RequestMethod.GET)
+	public String showRestaurantPage() {
+		return "restaurant"; 
+	}
 }
