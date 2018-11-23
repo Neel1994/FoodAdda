@@ -35,7 +35,7 @@ ${err}
                         <h3 class="panel-title">Login</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="login" method="POST">
+                        <form role="form" action="loginValidate" method="POST">
                             <fieldset>
                                 <div class="form-group" >
                                     <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>

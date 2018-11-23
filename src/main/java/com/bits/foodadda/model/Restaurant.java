@@ -17,7 +17,7 @@ public class Restaurant {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private long id;
 	private String name;
 	private String address;
 	private int rating;
@@ -27,7 +27,7 @@ public class Restaurant {
 		super();
 	}
 	 
-	public Restaurant(int id, String name, String address, int rating, int ratingPoints) {
+	public Restaurant(long id, String name, String address, int rating, int ratingPoints) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -36,26 +36,20 @@ public class Restaurant {
 		this.ratingPoints = ratingPoints;
 	}
 
-
-
 	public int getRatingPoints() {
 		return ratingPoints;
 	}
 
-
-
-	public void setRatingPoints(int ratingPoints) {
-		this.ratingPoints = ratingPoints;
-	}
-
-
-
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
+	}
+
+	public void setRatingPoints(int ratingPoints) {
+		this.ratingPoints = ratingPoints;
 	}
 
 	public String getName() {
@@ -82,17 +76,10 @@ public class Restaurant {
 		this.rating = rating;
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Restaurant [id=" + id + ", name=" + name + ", address=" + address + ", rating=" + rating
 				+ ", ratingPoints=" + ratingPoints + "]";
 	}
-
-	
-	
-
-	
 	
 }

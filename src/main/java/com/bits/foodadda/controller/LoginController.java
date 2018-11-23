@@ -14,7 +14,7 @@ import com.bits.foodadda.model.Customer;
 import com.bits.foodadda.service.LoginService;
 
 @Controller
-@SessionAttributes(value= {"customerId"})
+@SessionAttributes(value= {"customerId","customerName"})
 public class LoginController {
 	@Autowired
 	LoginService service;
@@ -26,7 +26,7 @@ public class LoginController {
 	}
 	
 	//Handle Login
-	@RequestMapping(value="login", method = RequestMethod.POST)
+	@RequestMapping(value="loginValidate", method = RequestMethod.POST)
 	public String loginUser(Model model, @RequestParam String email, @RequestParam String password) {
 		System.out.println(email);
 		System.out.println(password);
@@ -34,11 +34,12 @@ public class LoginController {
 		
         if (customer==null) {
         	model.addAttribute("err", "Invalid User Credentials!! Please type the credentials again");
-        	return "home";
+        	return "login";
         }
         else {
         	model.addAttribute("customerId", customer.getId());
-        	return "restaurant";
+        	model.addAttribute("customerName",customer.getName());
+        	return "redirect:restaurants";
         }
 	}
 	
@@ -48,6 +49,7 @@ public class LoginController {
 	  session.invalidate();
 	  if(model.containsAttribute("customerId")) {
 		  model.asMap().remove("customerId");
+		  model.asMap().remove("customerName");
 	  }
 	  return "redirect:login?act=lo";
 	}

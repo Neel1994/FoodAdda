@@ -27,11 +27,11 @@ public class RegisterController {
 		System.out.println(customer);
 		if(!service.registerCustomer(customer))
 			model.addAttribute("err", "User already exists");
-		return "restaurant";
+		return "restaurants";
 	}
 	
 	@RequestMapping(value="restaurant",method = RequestMethod.GET)
 	public String showRestaurantPage() {
-		return "restaurant"; 
+		return "restaurants"; 
 	}
 }
