@@ -65,14 +65,16 @@
 							<thead>
 								<tr>
 									<th>Name</th>
-									<th>Price</th>
+                                    <th>Price</th>
+                                    <th>Add to Cart</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach items="${menu}" var="menu">
 									<tr>
 										<td>${menu.name}</td>
-										<td>${menu.price}</td>
+                                        <td>${menu.price}</td>
+                                        <td><a href="addToCart?id=${menu.id}">Add</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

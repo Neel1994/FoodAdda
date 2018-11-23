@@ -1,7 +1,5 @@
 package com.bits.foodadda.controller;
 
-import java.util.List;
-
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,24 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.bits.foodadda.model.Item;
-import com.bits.foodadda.service.MenuService;
+import com.bits.foodadda.service.CartService;
 
 @Controller
 @SessionAttributes(value= {"customerId","customerName","restId"})
-public class MenuController {
+public class CartController {
 	@Autowired
-	MenuService menuService;
+	CartService cartService;
 	
-	@RequestMapping(value="menu", method = RequestMethod.GET)
-	public String displayMenuPage(ModelMap model,@PathParam(value="id") int id) {
-		if(id == 0) {
-			id = (int)model.get("restId");
-		}
-			
-		List<Item> menu = menuService.getMenu((long)id);
-		model.addAttribute("menu", menu);
-		model.addAttribute("restId", id);
-		return "menu";
+	@RequestMapping(value="addToCart", method = RequestMethod.GET)
+	public String addToCart(ModelMap model,@PathParam(value="id") int id) {
+		System.out.println(id);
+		System.out.println("Cart controller ke andar saved session id"+(int)model.get("restId"));
+		return "redirect:menu?id="+(int)model.get("restId");
 	}
 }
