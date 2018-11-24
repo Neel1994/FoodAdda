@@ -21,23 +21,26 @@ public class Restaurant {
 	private String name;
 	private String address;
 	private int rating;
-	private int ratingPoints;
+	private int ratingCount;
 	
 	public Restaurant() {
 		super();
 	}
 	 
-	public Restaurant(long id, String name, String address, int rating, int ratingPoints) {
+	public Restaurant(String name, String address, int rating, int ratingCount) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.rating = rating;
-		this.ratingPoints = ratingPoints;
+		this.ratingCount = ratingCount;
 	}
 
-	public int getRatingPoints() {
-		return ratingPoints;
+	public int getRatingCount() {
+		return ratingCount;
+	}
+
+	public void setRatingCount(int ratingCount) {
+		this.ratingCount = ratingCount;
 	}
 
 	public long getId() {
@@ -46,10 +49,6 @@ public class Restaurant {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public void setRatingPoints(int ratingPoints) {
-		this.ratingPoints = ratingPoints;
 	}
 
 	public String getName() {
@@ -79,7 +78,7 @@ public class Restaurant {
 	@Override
 	public String toString() {
 		return "Restaurant [id=" + id + ", name=" + name + ", address=" + address + ", rating=" + rating
-				+ ", ratingPoints=" + ratingPoints + "]";
+				+ ", ratingCount=" + ratingCount + "]";
 	}
-	
+
 }

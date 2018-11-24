@@ -49,7 +49,7 @@ public class FeedbackService {
 	                }
 	            }
 	        }
-	                  return mainSentiment;
+	        return mainSentiment;
 	    }
 	   
 	   public String cleanFeedback(String feedback) {
@@ -63,10 +63,22 @@ public class FeedbackService {
 	
 	public void storeFeedback(long id, String comment) {
 		Restaurant restaurant = restaurantRepository.getRestaurantById(id);
-		
 		Feedback feedback = new Feedback(restaurant,comment);
-	    int rating = findSentiment(feedback.getComment());
-		System.out.println(rating);
+	    int newRating = findSentiment(feedback.getComment());
+	    int rating = restaurant.getRating();
+	    int ratingCount = restaurant.getRatingCount();
+	    double calculatedRating = 0;
+	    
+	    System.out.println("New Rating being generated : "+newRating);
+	    
+	    if(ratingCount != 0) 
+	    	calculatedRating = ((rating*ratingCount)+newRating)/(ratingCount+1);
+	    else
+	    	calculatedRating = newRating;
+	    
+	    restaurant.setRating((int)Math.round(calculatedRating));
+	    restaurant.setRatingCount(ratingCount+1);
+	    restaurantRepository.save(restaurant);
 		feedbackRepository.save(feedback);
 		
 	}
