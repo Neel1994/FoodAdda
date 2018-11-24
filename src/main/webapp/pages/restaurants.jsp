@@ -35,20 +35,40 @@
 		
 					<!-- Right Navigation Buttons-->
 					<ul class="nav navbar-top-links navbar-right">
+					<c:if test="${not empty customerName}">
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
 							</a>
 							<ul class="dropdown-menu dropdown-user">
-								<c:if test="${empty customerName}">
+								
 									<li><a href="#"><i class="fa fa-user fa-fw"></i> Hi ${customerName}</a>
 									</li>
 									<li class="divider"></li>
 									<li><a href="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 									</li>
-								</c:if>
+								
 							</ul>
 						</li>
+						</c:if>
+						
+						<c:if test="${empty customerName}">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+							</a>
+							<ul class="dropdown-menu dropdown-user">
+								
+									<li><a href="#"><i class="fa fa-user fa-fw"></i> Hi ,Dear Kindly login to access the cart </a>
+									</li>
+									<li class="divider"></li>
+									<li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Login</a>
+									</li>
+								
+							</ul>
+						</li>
+						</c:if>
+						
 					</ul>
 				</nav>
 			</div>

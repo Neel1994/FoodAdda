@@ -71,13 +71,15 @@ public class FeedbackService {
 	    
 	    System.out.println("New Rating being generated : "+newRating);
 	    
-	    if(ratingCount != 0) 
-	    	calculatedRating = ((rating*ratingCount)+newRating)/(ratingCount+1);
+	    if(ratingCount != 0) {
+	   
+	    	calculatedRating = ((rating*ratingCount)+newRating)/(++ratingCount);}
 	    else
 	    	calculatedRating = newRating;
 	    
-	    restaurant.setRating((int)Math.round(calculatedRating));
-	    restaurant.setRatingCount(ratingCount+1);
+	    //restaurant.setRating((int)Math.round(calculatedRating));
+	    restaurant.setRating((int)calculatedRating);
+	    restaurant.setRatingCount(ratingCount);
 	    restaurantRepository.save(restaurant);
 		feedbackRepository.save(feedback);
 		

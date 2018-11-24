@@ -25,6 +25,11 @@ public class LoginController {
 		return "login";
 	}
 	
+	@RequestMapping(value="error", method = RequestMethod.GET)
+	public String displayErrorPage() {
+		return "error";
+	}
+	
 	//Handle Login
 	@RequestMapping(value="loginValidate", method = RequestMethod.POST)
 	public String loginUser(Model model, @RequestParam String email, @RequestParam String password) {
