@@ -20,55 +20,81 @@
 </head>
 <body>
 
-		<div id="wrapper">
-				<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-					<!--Nav Header-->
-					<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" href="restaurants">FoodAdda</a>
-					</div>
-		
-					<!-- Right Navigation Buttons-->
-					<ul class="nav navbar-top-links navbar-right">
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-							</a>
-							<ul class="dropdown-menu dropdown-user">
-								<c:if test="${empty customerName}">
-									<li><a href="#"><i class="fa fa-user fa-fw"></i> Hi ${customerName}</a>
-									</li>
-									<li class="divider"></li>
-									<li><a href="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-									</li>
-								</c:if>
-							</ul>
-						</li>
-					</ul>
-				</nav>
+	<div id="wrapper">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+			<!--Nav Header-->
+			<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="restaurants">FoodAdda</a>
 			</div>
+
+			<!-- Right Navigation Buttons-->
+			<ul class="nav navbar-top-links navbar-right">
+			<c:if test="${not empty customerName}">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						
+							<li><a href="#"><i class="fa fa-user fa-fw"></i> Hi ${customerName}</a>
+							</li>
+							<li class="divider"></li>
+							<li><a href="restaurants"><i class="fa fa-sign-out fa-fw"></i>Restaurants</a>
+							<li class="divider"></li>
+							<li><a href="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+							</li>
+						
+					</ul>
+				</li>
+				</c:if>
+				
+				<c:if test="${empty customerName}">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						
+							<li><a href="#"><i class="fa fa-user fa-fw"></i> Login to access Cart </a>
+							</li>
+							<li class="divider"></li>
+							<li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Login</a>
+							</li>
+						
+					</ul>
+				</li>
+				</c:if>
+				
+			</ul>
+		</nav>
+	</div>
 	<br><br>
 	
-	Request : ${chatBotRequest}	<br>
-	Response : ${chatBotResponse}
-
+	<center>
+	<c:if test="${not empty chatBotRequest}">
+		You : ${chatBotRequest}	<br>
+		ChatBot : ${chatBotResponse}
+	</c:if>
+	
 	<div class="panel-body">
 		<form role="form" action="chatbot" method="POST">
 			<fieldset>
 				<div class="form-group" >
-					<input class="form-control" placeholder="Enter text" name="text" type="text" autofocus>
+					<input class="form-control" placeholder="Enter text" name="text" type="text" style="width: 30%" autofocus>
 				</div>
 				<!-- Change this to a button or input when using this as a form -->
-				<input type="submit" class="btn btn-primary" value="Login">
+				<input type="submit" class="btn btn-primary" value="Enter">
 			   
 			</fieldset>
 		</form>
 	</div>
+	</center>
 
 		<!-- Core Scripts - Include with every page -->
 		<script src="js/jquery-1.10.2.js"></script>

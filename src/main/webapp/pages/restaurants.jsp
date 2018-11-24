@@ -45,6 +45,8 @@
 									<li><a href="#"><i class="fa fa-user fa-fw"></i> Hi ${customerName}</a>
 									</li>
 									<li class="divider"></li>
+									<li><a href="chatbot"><i class="fa fa-sign-out fa-fw"></i> Chat Bot</a>
+									<li class="divider"></li>
 									<li><a href="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 									</li>
 								
@@ -59,7 +61,7 @@
 							</a>
 							<ul class="dropdown-menu dropdown-user">
 								
-									<li><a href="#"><i class="fa fa-user fa-fw"></i> Hi ,Dear Kindly login to access the cart </a>
+									<li><a href="#"><i class="fa fa-user fa-fw"></i> Login to access Cart </a>
 									</li>
 									<li class="divider"></li>
 									<li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Login</a>
@@ -74,6 +76,7 @@
 			</div>
 	<br><br>
 
+	<center>
 	<div class="col-lg-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -105,7 +108,8 @@
 				</div>
 			</div>
 		</div>
-
+	</center>
+	
 		<!-- Core Scripts - Include with every page -->
 		<script src="js/jquery-1.10.2.js"></script>
 		<script src="js/bootstrap.min.js"></script>

@@ -20,38 +20,60 @@
 </head>
 <body>
 
-		<div id="wrapper">
-				<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-					<!--Nav Header-->
-					<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" href="restaurants">FoodAdda</a>
-					</div>
-		
-					<!-- Right Navigation Buttons-->
-					<ul class="nav navbar-top-links navbar-right">
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-							</a>
-							<ul class="dropdown-menu dropdown-user">
-								<c:if test="${empty customerName}">
-									<li><a href="#"><i class="fa fa-user fa-fw"></i> Hi ${customerName}</a>
-									</li>
-									<li class="divider"></li>
-									<li><a href="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-									</li>
-								</c:if>
-							</ul>
-						</li>
-					</ul>
-				</nav>
+	<div id="wrapper">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+			<!--Nav Header-->
+			<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="restaurants">FoodAdda</a>
 			</div>
+
+			<!-- Right Navigation Buttons-->
+			<ul class="nav navbar-top-links navbar-right">
+			<c:if test="${not empty customerName}">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						
+							<li><a href="#"><i class="fa fa-user fa-fw"></i> Hi ${customerName}</a>
+							</li>
+							<li class="divider"></li>
+							<li><a href="chatbot"><i class="fa fa-sign-out fa-fw"></i> Chat Bot</a>
+							<li class="divider"></li>
+							<li><a href="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+							</li>
+						
+					</ul>
+				</li>
+				</c:if>
+				
+				<c:if test="${empty customerName}">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						
+							<li><a href="#"><i class="fa fa-user fa-fw"></i> Login to access Cart </a>
+							</li>
+							<li class="divider"></li>
+							<li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Login</a>
+							</li>
+						
+					</ul>
+				</li>
+				</c:if>
+				
+			</ul>
+		</nav>
+	</div>
 	<br><br>
     
     <a href="cart">Cart</a>
