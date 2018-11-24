@@ -1,4 +1,4 @@
-package com.bits.foodadda.service;
+package com.bits.foodadda.serviceImpl;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
