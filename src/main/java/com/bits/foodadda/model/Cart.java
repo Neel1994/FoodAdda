@@ -27,6 +27,12 @@ public class Cart {
 		super();
 	}
 
+	public Cart(Customer customer, Item item) {
+		super();
+		this.customer = customer;
+		this.item = item;
+	}
+
 	public Cart(long id, Customer customer, Item item) {
 		super();
 		this.id = id;

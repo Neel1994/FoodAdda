@@ -14,4 +14,7 @@ public interface MenuRepository extends CrudRepository<Item,Long> {
 	
 	@Query("select i from Item i where i.restaurant=?1")
 	public List<Item> getRestaurantMenu(@PathParam(value="restaurant") Restaurant restaurant);
+	
+	@Query("select i from Item i where i.id=?1")
+	public Item getItemById(@PathParam(value="id") long id);
 }

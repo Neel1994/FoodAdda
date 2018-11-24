@@ -53,6 +53,9 @@
 				</nav>
 			</div>
 	<br><br>
+    
+    <a href="cart">Cart</a>
+
 
 	<div class="col-lg-6">
 			<div class="panel panel-default">
