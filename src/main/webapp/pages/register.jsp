@@ -19,7 +19,17 @@
     <!-- SB Admin CSS - Include with every page -->
     <link href="css/sb-admin.css" rel="stylesheet">
     
-
+ <style>
+         body {
+            background-image: url("image/register.jpg");
+            -moz-background-size: cover;
+			-webkit-background-size: cover;
+			 background-size: cover;
+			 background-position: top center !important;
+             background-repeat: no-repeat !important;
+             background-attachment: fixed;
+         }
+      </style>
 </head>
 
 <body>

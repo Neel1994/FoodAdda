@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.bits.foodadda.repository.CustomerRepository;
 import com.bits.foodadda.service.FeedbackService;
 
 @Controller
@@ -16,6 +17,8 @@ import com.bits.foodadda.service.FeedbackService;
 public class FeedbackController {
 	@Autowired
 	FeedbackService feedbackService;
+	@Autowired
+	CustomerRepository repository;
 	
 	@RequestMapping(value="feedback", method = RequestMethod.GET)
 	public String displayFeedbackPage(ModelMap model,@PathParam(value="id") int id) {

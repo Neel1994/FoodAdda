@@ -17,6 +17,19 @@
 <link href="css/sb-admin.css" rel="stylesheet">
 
 <title>Restaurants</title>
+
+<style>
+         body {
+            background-image: url("image/rest1.jpg");
+            -moz-background-size: cover;
+			-webkit-background-size: cover;
+			 background-size: cover;
+			 background-position: top center !important;
+             background-repeat: no-repeat !important;
+             background-attachment: fixed;
+         }
+         
+      </style>
 </head>
 <body>
 
@@ -65,6 +78,11 @@
 									</li>
 									<li class="divider"></li>
 									<li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Login</a>
+									</li>
+									<li><a href="#"><i class="fa fa-user fa-fw"></i> New Customers click to register here </a>
+									</li>
+									<li class="divider"></li>
+									<li><a href="register"><i class="fa fa-sign-out fa-fw"></i> Register</a>
 									</li>
 								
 							</ul>

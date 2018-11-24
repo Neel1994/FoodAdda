@@ -24,6 +24,7 @@ public class MenuController {
 	public String displayMenuPage(ModelMap model,@PathParam(value="id") int id) {
 		if(id == 0) {
 			id = (int)model.get("restId");
+			return "redirect:restaurants";
 		}
 			
 		List<Item> menu = menuService.getMenu((long)id);

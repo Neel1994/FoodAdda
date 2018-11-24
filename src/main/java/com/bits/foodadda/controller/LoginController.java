@@ -38,7 +38,8 @@ public class LoginController {
 		Customer customer = service.login(email, password);
 		
         if (customer==null) {
-        	model.addAttribute("err", "Invalid User Credentials!! Please type the credentials again");
+        	//model.addAttribute("err", "Invalid User Credentials!! Please type the credentials again");
+        	model.addAttribute("err", "<script type=\"text/javascript\"> window.alert(\"Invalid Login Credentials\")</script>");
         	return "login";
         }
         else {

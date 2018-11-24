@@ -17,6 +17,32 @@
 <link href="css/sb-admin.css" rel="stylesheet">
 
 <title>Menu</title>
+
+ <style>
+         body {
+            background-image: url("image/menu1.jpg");
+            -moz-background-size: cover;
+			-webkit-background-size: cover;
+			 background-size: cover;
+			 background-position: top center !important;
+             background-repeat: no-repeat !important;
+             background-attachment: fixed;
+         }
+         a:link, a:visited {
+          background-color: #f44336;
+          color: white;
+          padding: 14px 25px;
+          text-align: center; 
+          text-decoration: none;
+          display: inline-block;
+           }
+
+         a:hover, a:active {
+           background-color: green;
+             }
+         
+      </style>
+
 </head>
 <body>
 

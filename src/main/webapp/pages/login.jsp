@@ -29,21 +29,23 @@
              background-repeat: no-repeat !important;
              background-attachment: fixed;
          }
+         
       </style>
 
 </head>
 
 <body>
+${err} 
 <c:if test="${param.act eq 'lo'}">
 <p class="success">Logout Successfull! Thanks !</p>
 </c:if>
-${err}
+
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Login</h3>
+                        <h3 class="panel-title">Login & SignUp</h3>
                     </div>
                     <div class="panel-body">
                         <form role="form" action="loginValidate" method="POST">
@@ -56,6 +58,8 @@ ${err}
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <input type="submit" class="btn btn-primary" value="Login">
+                                <a href="register" class="btn btn-primary" >SignUp</a>
+                               
                                
                             </fieldset>
                         </form>
