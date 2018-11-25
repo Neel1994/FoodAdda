@@ -84,7 +84,7 @@
 								<input class="form-control" placeholder="Restaurant Id" name="id" value="${id}">
 							</div>
 							<div class="form-group">
-								<input class="form-control" placeholder="Comment" name="comment" type="text">
+								<input class="form-control" placeholder="Comment" name="comment" type="text" required>
 							</div>
 							<!-- Change this to a button or input when using this as a form -->
 							<input type="submit" class="btn btn-primary" value="Submit">
