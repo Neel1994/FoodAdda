@@ -75,13 +75,12 @@ public class FeedbackServiceImpl implements FeedbackService{
 	    
 	    if(ratingCount != 0) {
 	   
-	    	calculatedRating = ((rating*ratingCount)+newRating)/(++ratingCount);}
+	    	calculatedRating = ((rating*ratingCount)+newRating)/(ratingCount+1);}
 	    else
 	    	calculatedRating = newRating;
 	    
-	    //restaurant.setRating((int)Math.round(calculatedRating));
-	    restaurant.setRating((int)calculatedRating);
-	    restaurant.setRatingCount(ratingCount);
+	    restaurant.setRating((int)Math.round(calculatedRating));
+	    restaurant.setRatingCount(ratingCount+1);
 	    restaurantRepository.save(restaurant);
 		feedbackRepository.save(feedback);
 		
