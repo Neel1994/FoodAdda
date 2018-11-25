@@ -13,7 +13,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Table(name = "customer")
 @EntityListeners(AuditingEntityListener.class)
 
-public class Customer implements User{
+public class Customer{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

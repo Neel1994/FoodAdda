@@ -27,8 +27,4 @@ public class RegisterController {
 		return "login";
 	}
 	
-	@RequestMapping(value="restaurant",method = RequestMethod.GET)
-	public String showRestaurantPage() {
-		return "restaurants"; 
-	}
 }
