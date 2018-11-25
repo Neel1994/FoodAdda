@@ -27,7 +27,7 @@ public class RegisterController {
 		System.out.println(customer);
 		if(!service.registerCustomer(customer))
 			model.addAttribute("err", "User already exists");
-		return "restaurants";
+		return "login";
 	}
 	
 	@RequestMapping(value="restaurant",method = RequestMethod.GET)

@@ -33,10 +33,16 @@ public class CartController {
 	
 	@RequestMapping(value="cart", method = RequestMethod.GET)
 	public String displayCartPage(ModelMap model) {
-		long custId = (long)model.get("customerId");
-		List<Cart> cart = cartService.getCart(custId);
-		model.addAttribute("cart", cart);
-		return "cart";
+		
+		if((model.get("customerName") == null))
+				return "login";
+		else {
+			
+		     long custId = (long)model.get("customerId");
+		     List<Cart> cart = cartService.getCart(custId);
+		     model.addAttribute("cart", cart);
+		     return "cart"; }
+		
 	}
 	
 	@RequestMapping(value="removeFromCart", method = RequestMethod.GET)

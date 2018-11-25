@@ -19,8 +19,10 @@ public class ChatbotController {
 	
 	@RequestMapping(value="chatbot", method = RequestMethod.GET)
 	public String getChatBotPage(ModelMap model) {
-		String name = (String)model.get("customerName");
-		if(name.isEmpty())
+		
+		model.addAttribute("customerName");
+		//String name = (String) model.get("customerName");
+		if(model.get("customerName") == null)
 			return "login";
 		else
 			return "chatbot";
