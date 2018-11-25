@@ -13,7 +13,8 @@ public class RegisterServiceImpl implements RegisterService{
 	
 	@Autowired
 	CustomerRepository repository;
-	public boolean registerCustomer(Customer newCustomer) {
+	public boolean registerCustomer(String name,String password,String email,String address) {
+		Customer newCustomer = new Customer(name,password,email,address);
 		String newPassword = new AppUtils().encryptPassword(newCustomer.getPassword());
 		newCustomer.setPassword(newPassword);
 		

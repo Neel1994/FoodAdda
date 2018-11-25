@@ -1,7 +1,5 @@
 package com.bits.foodadda.service;
 
-import com.bits.foodadda.model.Customer;
-
 public interface RegisterService {
-	public boolean registerCustomer(Customer newCustomer);
+	public boolean registerCustomer(String name,String password,String email,String address);
 }
