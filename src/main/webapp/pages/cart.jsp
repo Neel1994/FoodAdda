@@ -55,6 +55,7 @@
 					
 				</ul>
 			</li>
+			<li><a href="submitCart">Submit Cart</a></li>
 			</c:if>
 			
 			<c:if test="${empty customerName}">
@@ -108,8 +109,6 @@
 				</div>
 			</div>
 		</div>
-
-		<a href="submitCart">Submit Cart</a>
 
 		<!-- Core Scripts - Include with every page -->
 		<script src="js/jquery-1.10.2.js"></script>

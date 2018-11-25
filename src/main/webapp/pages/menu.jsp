@@ -28,18 +28,6 @@
              background-repeat: no-repeat !important;
              background-attachment: fixed;
          }
-         a:link, a:visited {
-          background-color: #f44336;
-          color: white;
-          padding: 14px 25px;
-          text-align: center; 
-          text-decoration: none;
-          display: inline-block;
-           }
-
-         a:hover, a:active {
-           background-color: green;
-             }
          
       </style>
 
@@ -78,6 +66,7 @@
 						
 					</ul>
 				</li>
+				<li><a href="cart">Cart</a></li>
 				</c:if>
 				
 				<c:if test="${empty customerName}">
@@ -102,10 +91,7 @@
 	</div>
 	<br><br>
     
-    <a href="cart">Cart</a>
-
-
-	<div class="col-lg-6">
+    <div class="col-lg-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					Restaurants
